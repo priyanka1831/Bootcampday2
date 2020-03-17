@@ -1,0 +1,76 @@
+
+import java.util.Scanner;
+
+public class Intersectionelements {	
+	    public static void main(String[] args) {
+
+	        Intersectionelements is=new Intersectionelements(); //creating object
+
+	        is.inter(); // calling method
+
+	    }
+	    public static void inter() {
+	    	//scanner class
+	        Scanner sc = new Scanner(System.in);  
+
+	        System.out.println("Enter the size of arrays:");  
+	     // taking number of array elements present in the array
+	        int number = sc.nextInt();   
+	        // array initialization for first array
+	        int[] first = new int[number];
+	     // array initialization for second array
+	        int[] second = new int[number];  
+	     // array initialization for intersection array
+	        int[] interSection = new int[number];  
+	       
+	        int count = 0; 
+
+	        System.out.println("Enter 1st array elements a:");
+	     // Assigning 1st array elements 
+	        for (int i = 0; i<number; i++)  
+
+	        {
+	        	//Storing the elements
+	            first[i] = sc.nextInt(); 
+
+	        }
+	        System.out.println("Enter 2nd array elements b:");
+	    
+	        // Assigning 2nd array elements 
+	        for (int j = 0; j<number; j++) 
+
+	        {
+	        	// storing the elements 
+	            second[j] = sc.nextInt();  
+
+	        }
+	     // for loop for intersection elements
+	        for (int i = 0; i<number ;i++) 
+
+	        {
+	        	// it will check one element of 1st array with all the elements in another array 
+	            for (int j = 0; j<= number - 1; j++)  
+
+	            {
+	            	//condition for checking the element is equal or not
+	                if (first[i] == second[j]) 
+
+	                {
+	                	//if it is equal the element stored in intersection array 
+	                    interSection[count] = first[i]; 
+
+	                    count++; 
+	                }
+	            }
+	        }
+	        System.out.println("Intersection array c: ");
+	        for (int k = 0; k<count; k++)
+	        {
+	        	// printing elements
+	            System.out.println(interSection[k]);
+	        }
+	      //closing scanner class
+	        sc.close();    
+	    }//end of main method
+
+}//end of class method
