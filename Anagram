@@ -1,0 +1,43 @@
+import java.util.Arrays;  
+public class Anagram {
+	
+  public static void isAnagram(String str1, String str2) {  
+		    //initializing two strings
+	        String s1 = str1.replaceAll("\\s", ""); 
+	        
+	        String s2 = str2.replaceAll("\\s", "");  
+	        
+	        boolean status = true;  
+	        //checking two strings using if loop
+	        if (s1.length() != s2.length()) { 
+	        	
+	            status = false;
+	            
+	        } else {  
+	        	//converting character in previously declared string into character array
+	            char[] ArrayS1 = s1.toLowerCase().toCharArray();
+	            
+	            char[] ArrayS2 = s2.toLowerCase().toCharArray();
+	          //sorted list of  s1 
+	            Arrays.sort(ArrayS1);
+	          //sorted list of s2
+	            Arrays.sort(ArrayS2);
+	            
+	            status = Arrays.equals(ArrayS1, ArrayS2);
+	            
+	        }  //using if-else loop
+	        if (status) { 
+	        	//printing if they are anagrams
+	            System.out.println(s1 + " and " + s2 + " are anagrams"); 
+	            
+	        } else { 
+	        	//printing if they are not anagrams
+	            System.out.println(s1 + " and " + s2 + " are not anagrams");  
+	        }  
+	    }  
+	   
+	    public static void main(String[] args) {  
+	        isAnagram("bat", "abt");  
+	        isAnagram("tap", "pot");  
+	    }//end of main method  
+	}//end of class method  
