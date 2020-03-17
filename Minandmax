@@ -1,0 +1,67 @@
+
+import java.util.Scanner;
+
+public class Minandmax {
+public static void main(String[] args) {
+
+	            Scanner in=new Scanner(System.in);
+	            System.out.println("Enter the length of the array :");
+	                // takes array size
+	            int length = in.nextInt(); 
+	            // initializing array size
+                int []array = new int[length];
+                
+	            System.out.println("Enter the elements of the array:");
+	             // reading array elements
+	            for(int i=0; i<length; i++ ) 
+	              {
+	            	array[i] = in.nextInt();
+
+	              }
+	                  // calling max method
+                  int max = getMax(array);  
+                     // calling min method
+	               int min = getMin(array);  
+	            // printing maximum and minimum value
+                System.out.println("Max = " + max + " & " + "Min= " + min); 
+                 // closing scanner class
+	            in.close(); 
+	            }
+                   //calculating maximum value method
+            public static int getMax(int[] inputArray)  
+                     {
+            	int maxValue = inputArray[0];
+              for (int i = 0; i<inputArray.length; i++) 
+
+	        {
+            	// checking maximum value in the array  
+	       if (inputArray[i] >maxValue) 
+
+	            {
+	    	          // storing the maximum value
+	                maxValue = inputArray[i]; 
+	            }
+	        }
+           // returns the maximum value
+	            return maxValue;  
+
+	        }
+                // minimum value method
+	        public static int getMin(int[] inputArray) {  
+	            int minValue = inputArray[0];
+	            for (int i = 0; i<inputArray.length; i++) 
+
+	            {
+	            	 // checking minimum value in the array 
+	                if (inputArray[i] <minValue) 
+
+	                {
+	                	// storing minimum value
+	                    minValue = inputArray[i];  
+	                }
+	            }
+	         // returns minimum value
+	            return minValue;  
+	    }//end of main method
+
+	}//end of class method
